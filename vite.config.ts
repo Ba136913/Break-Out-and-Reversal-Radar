@@ -9,6 +9,14 @@ export default defineConfig({
     port: 3000,
     allowedHosts: true,
   },
+
+  resolve: {
+    alias: {
+      '@': '/src',
+      'convex': '/convex'
+    }
+  },
+
   plugins: [
     tailwindcss(),
     tsConfigPaths({
