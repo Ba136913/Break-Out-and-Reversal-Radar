@@ -3,20 +3,19 @@ import { defineConfig } from 'vite'
 import tsConfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
 import viteReact from '@vitejs/plugin-react'
+import path from 'path'
 
 export default defineConfig({
   server: {
     port: 3000,
     allowedHosts: true,
   },
-
   resolve: {
     alias: {
-      '@': '/src',
-      'convex': '/convex'
-    }
+      "@": path.resolve(__dirname, "./src"),
+      "convex": path.resolve(__dirname, "./convex"),
+    },
   },
-
   plugins: [
     tailwindcss(),
     tsConfigPaths({
