@@ -338,7 +338,7 @@ export const exampleQuery = query({
 ```tsx
 import { useSuspenseQuery } from '@tanstack/react-query'
 import { convexQuery } from '@convex-dev/react-query'
-import { api } from '../../convex/_generated/api'
+import { api } from 'convex/_generated/api'
 
 function MyComponent() {
   const { data } = useSuspenseQuery(
@@ -353,7 +353,7 @@ function MyComponent() {
 - Use `useMutation` from `convex/react`:
 ```tsx
 import { useMutation } from 'convex/react'
-import { api } from '../../convex/_generated/api'
+import { api } from 'convex/_generated/api'
 
 function MyComponent() {
   const doSomething = useMutation(api.myModule.myMutation)
@@ -365,7 +365,7 @@ function MyComponent() {
 - Use `useAction` from `convex/react`:
 ```tsx
 import { useAction } from 'convex/react'
-import { api } from '../../convex/_generated/api'
+import { api } from 'convex/_generated/api'
 
 function MyComponent() {
   const performAction = useAction(api.myModule.myAction)
@@ -932,7 +932,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { convexQuery } from "@convex-dev/react-query";
 import { useMutation } from "convex/react";
-import { api } from "../../convex/_generated/api";
+import { api } from "convex/_generated/api";
 import { FormEvent, useState } from "react";
 
 export const Route = createFileRoute("/")({
