@@ -5,7 +5,7 @@ globs: **/*.ts,**/*.tsx,**/*.js,**/*.jsx
 
 # Convex guidelines
 ## Common mistakes to avoid
-- Do NOT use `useQuery` from `convex/react` — use `useSuspenseQuery` from `@tanstack/react-query` with `convexQuery` from `@convex-dev/react-query`.
+- Do NOT use `useQuery` from `@convex-dev/react` — use `useSuspenseQuery` from `@tanstack/react-query` with `convexQuery` from `@convex-dev/react-query`.
 - Do NOT use `.filter()` on Convex queries — define an index in the schema and use `.withIndex()`.
 - Do NOT forget the `returns` validator on any Convex function. Use `returns: v.null()` for void functions.
 - Do NOT pass `undefined` as a Convex value — use `null` instead.
@@ -347,12 +347,12 @@ function MyComponent() {
   return <div>{data.someField}</div>
 }
 ```
-- **IMPORTANT**: Do NOT use `useQuery` from `convex/react`. Always use `useSuspenseQuery` with the `convexQuery` adapter as shown above.
+- **IMPORTANT**: Do NOT use `useQuery` from `@convex-dev/react`. Always use `useSuspenseQuery` with the `convexQuery` adapter as shown above.
 
 ### Writing data (mutations)
-- Use `useMutation` from `convex/react`:
+- Use `useMutation` from `@convex-dev/react`:
 ```tsx
-import { useMutation } from 'convex/react'
+import { useMutation } from '@convex-dev/react'
 import { api } from 'convex/_generated/api'
 
 function MyComponent() {
@@ -362,9 +362,9 @@ function MyComponent() {
 ```
 
 ### Calling actions
-- Use `useAction` from `convex/react`:
+- Use `useAction` from `@convex-dev/react`:
 ```tsx
-import { useAction } from 'convex/react'
+import { useAction } from '@convex-dev/react'
 import { api } from 'convex/_generated/api'
 
 function MyComponent() {
@@ -931,7 +931,7 @@ export const toggle = mutation({
 import { createFileRoute } from "@tanstack/react-router";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { convexQuery } from "@convex-dev/react-query";
-import { useMutation } from "convex/react";
+import { useMutation } from "@convex-dev/react";
 import { api } from "convex/_generated/api";
 import { FormEvent, useState } from "react";
 
