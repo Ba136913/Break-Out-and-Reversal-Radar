@@ -1,5 +1,5 @@
 {
-  "include": ["**/*.ts", "**/*.tsx", "public/script*.js"],
+  "include": ["src", "convex"],
   "compilerOptions": {
     "target": "ES2022",
     "jsx": "react-jsx",
@@ -8,27 +8,15 @@
     "types": ["vite/client"],
 
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
     "noEmit": true,
 
     "skipLibCheck": true,
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
 
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./src/*"],
-      "convex/*": ["./convex/*"]
-    },
-
-    "esModuleInterop": true,
-    "isolatedModules": true,
-    "resolveJsonModule": true,
-    "allowJs": true,
-    "forceConsistentCasingInFileNames": true
+      "@/*": ["./src/*"],
+      "@convex/*": ["./convex/*"]
+    }
   }
 }

@@ -6,29 +6,28 @@ import {
 } from '@tanstack/react-router'
 import * as React from 'react'
 import type { QueryClient } from '@tanstack/react-query'
-import appCss from '~/styles/app.css?url'
+
+// ✅ Direct CSS import (no ?url, no variable)
+import "@/styles/app.css"
 
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient
 }>()({
   head: () => ({
     meta: [
-      {
-        charSet: 'utf-8',
-      },
+      { charSet: 'utf-8' },
       {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1',
       },
-      {
-        title: 'App',
-      },
+      { title: 'App' },
     ],
     links: [
-      { rel: 'stylesheet', href: appCss },
+      // ❌ REMOVE CSS LINK (important)
       { rel: 'icon', href: '/favicon.ico' },
     ],
   }),
+
   notFoundComponent: () => <div>Route not found</div>,
   component: RootComponent,
 })
